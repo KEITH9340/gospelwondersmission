@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOX OUTIS FASHION | Home</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+        VOX <span>OUTIS</span>
+    </a>
+
+    <nav class="navbar">
+
+        <a href="index.html">Home</a>
+
+        <a href="products.html">Our Products</a>
+
+        <a href="about.html">About Us</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="login.html">Login</a>
+
+        <a href="cart.html">
+            🛒 Cart <span id="cart-count">0</span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">WELCOME TO</p>
+
+        <h1>
+            VOX OUTIS
+            <span>FASHION</span>
+        </h1>
+
+        <p>
+            Express yourself.
+            Wear your identity.
+        </p>
+
+        <a href="products.html" class="btn">
+            SHOP NOW
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <p>DISCOVER OUR STYLE</p>
+
+        <h2>Featured Products</h2>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <div class="product-card">
+
+            <!-- PUT YOUR T-SHIRT IMAGE IN THE IMAGES FOLDER -->
+            <img src="images/tshirt.jpg" alt="Classic T-Shirt">
+
+            <div class="product-info">
+
+                <h3>Classic T-Shirt</h3>
+
+                <p class="price">$25.00</p>
+
+                <button onclick="addToCart(
+                    'Classic T-Shirt',
+                    25,
+                    'images/tshirt.jpg'
+                )">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <!-- PUT YOUR HOODIE IMAGE IN THE IMAGES FOLDER -->
+            <img src="images/hoodie.jpg" alt="VOX OUTIS Hoodie">
+
+            <div class="product-info">
+
+                <h3>VOX OUTIS Hoodie</h3>
+
+                <p class="price">$45.00</p>
+
+                <button onclick="addToCart(
+                    'VOX OUTIS Hoodie',
+                    45,
+                    'images/hoodie.jpg'
+                )">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <!-- PUT YOUR SHOES IMAGE IN THE IMAGES FOLDER -->
+            <img src="images/shoes.jpg" alt="Fashion Shoes">
+
+            <div class="product-info">
+
+                <h3>Fashion Shoes</h3>
+
+                <p class="price">$60.00</p>
+
+                <button onclick="addToCart(
+                    'Fashion Shoes',
+                    60,
+                    'images/shoes.jpg'
+                )">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="brand-section">
+
+    <h2>WEAR YOUR IDENTITY</h2>
+
+    <p>
+        VOX OUTIS FASHION is more than clothing.
+        It is a way of expressing your confidence,
+        creativity and identity.
+    </p>
+
+    <a href="about.html" class="btn">
+        LEARN MORE
+    </a>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 VOX OUTIS FASHION.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

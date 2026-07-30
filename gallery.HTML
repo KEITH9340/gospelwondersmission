@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Gospel Wonders Mission Church Bulenga</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* HERO */
+
+.hero{
+    height:50vh;
+    background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("gallery-jo.jpg") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+/* SECTION */
+
+.section{
+    width:90%;
+    max-width:1300px;
+    margin:60px auto;
+}
+
+.section h2{
+    text-align:center;
+    color:#b8860b;
+    margin-bottom:15px;
+}
+
+.section p{
+    text-align:center;
+    margin-bottom:40px;
+    color:#555;
+    font-size:18px;
+}
+
+/* GALLERY */
+
+.gallery{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+
+}
+
+.gallery-item{
+
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.4s;
+
+}
+
+.gallery-item:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.gallery-item img{
+
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    cursor:pointer;
+    transition:.5s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.caption{
+
+    padding:18px;
+    text-align:center;
+    font-weight:bold;
+    color:#444;
+
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.95);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+
+}
+
+.lightbox img{
+
+    width:90%;
+    max-width:900px;
+    border-radius:10px;
+
+}
+
+.close{
+
+    position:absolute;
+    top:30px;
+    right:40px;
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:70px;
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>Church Gallery</h1>
+
+<p>Capturing Moments of Worship, Fellowship & Faith</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Photo Gallery</h2>
+
+<p>Explore memorable moments from Gospel Wonders Mission Church Bulenga.</p>
+
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="father.png" onclick="openImage(this.src)">
+<div class="caption">Sunday Worship Service</div>
+</div>
+
+<div class="gallery-item">
+<img src="media.jpg" onclick="openImage(this.src)">
+<div class="caption">Praise & Worship</div>
+</div>
+
+<div class="gallery-item">
+<img src="hi.jpg" onclick="openImage(this.src)">
+<div class="caption">Youth Fellowship</div>
+</div>
+
+<div class="gallery-item">
+<img src="evan.jpg" onclick="openImage(this.src)">
+<div class="caption">Children's Ministry</div>
+</div>
+
+<div class="gallery-item">
+<img src="jo.jpg" onclick="openImage(this.src)">
+<div class="caption">Community Outreach</div>
+</div>
+
+<div class="gallery-item">
+<img src="women.jpg" onclick="openImage(this.src)">
+<div class="caption">Church Conference</div>
+</div>
+
+<div class="gallery-item">
+<img src="usher.jpg" onclick="openImage(this.src)">
+<div class="caption">Prayer Gathering</div>
+</div>
+
+<div class="gallery-item">
+<img src="choir.jpg" onclick="openImage(this.src)">
+<div class="caption">Choir Ministry</div>
+</div>
+
+<div class="gallery-item">
+<img src="baptism.jpg" onclick="openImage(this.src)">
+<div class="caption">Baptism Service</div>
+</div>
+
+</div>
+
+</section>
+
+<div class="lightbox" id="lightbox">
+
+<span class="close" onclick="closeImage()">&times;</span>
+
+<img id="preview">
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 Gospel Wonders Mission Church Bulenga | All Rights Reserved
+
+</p>
+
+</footer>
+
+<script>
+
+function openImage(image){
+
+document.getElementById("lightbox").style.display="flex";
+
+document.getElementById("preview").src=image;
+
+}
+
+function closeImage(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+window.onclick=function(event){
+
+const lightbox=document.getElementById("lightbox");
+
+if(event.target==lightbox){
+
+lightbox.style.display="none";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

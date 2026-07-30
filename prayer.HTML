@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prayer Request | Gospel Wonders Mission Church Bulenga</title>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+.hero{
+height:50vh;
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("prayer.jpg") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.container{
+width:90%;
+max-width:700px;
+margin:50px auto;
+}
+
+form{
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+color:#b8860b;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:15px;
+margin-bottom:20px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+textarea{
+height:180px;
+resize:none;
+}
+
+button{
+width:100%;
+padding:16px;
+font-size:18px;
+background:#b8860b;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:black;
+}
+
+#status{
+margin-top:20px;
+text-align:center;
+font-weight:bold;
+font-size:17px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>Prayer Request</h1>
+
+<p>We are standing with you in prayer.</p>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<form id="contact-form">
+
+<h2>Submit Your Prayer Request</h2>
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="text" name="phone" placeholder="Phone Number">
+
+<select name="category">
+    <option value="Healing">Healing</option>
+    <option value="Family">Family</option>
+    <option value="Financial Breakthrough">Financial Breakthrough</option>
+    <option value="Thanksgiving">Thanksgiving</option>
+    <option value="Deliverance">Deliverance</option>
+    <option value="Salvation">Salvation</option>
+    <option value="Other">Other</option>
+</select>
+
+<textarea name="request" placeholder="Type your prayer request here..." required></textarea>
+
+<button type="submit">
+Submit Prayer Request
+</button>
+
+<p id="status"></p>
+
+</form>
+
+</div>
+
+<footer>
+
+© 2026 Gospel Wonders Mission Church Bulenga
+
+</footer>
+
+<script>
+
+// Initialize EmailJS
+emailjs.init({
+    publicKey: "GDspwxlwdunoY-mOv"
+});
+
+const form = document.getElementById("contact-form");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+status.style.color="blue";
+status.innerHTML="Sending please wait..............";
+
+emailjs.sendForm(
+"service_ayrl60q",
+"template_fdamtdg",
+form
+)
+
+.then(function(){
+
+status.style.color="green";
+status.innerHTML=" Sent successfully.";
+
+form.reset();
+
+})
+
+.catch(function(error){
+
+status.style.color="red";
+status.innerHTML=" Failed please try again..";
+
+console.log("EmailJS Error:", error);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

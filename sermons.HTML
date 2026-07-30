@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sermons | Gospel Wonders Mission Church Bulenga</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.slideshow{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    animation:fade 20s infinite;
+}
+
+.slide:nth-child(1){
+    background-image:url("evan.jpg");
+    animation-delay:0s;
+}
+
+.slide:nth-child(2){
+    background-image:url("media.jpg");
+    animation-delay:5s;
+}
+
+.slide:nth-child(3){
+    background-image:url("men.jpg");
+    animation-delay:10s;
+}
+
+.slide:nth-child(4){
+    background-image:url("hi.jpg");
+    animation-delay:15s;
+}
+.slide:nth-child(4){
+    background-image:url("father.png");
+    animation-delay:15s;
+
+}
+@keyframes fade{
+
+0%{opacity:0;}
+5%{opacity:1;}
+25%{opacity:1;}
+30%{opacity:0;}
+100%{opacity:0;}
+
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.65);
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:24px;
+    max-width:800px;
+}
+
+/* ================= SERMONS ================= */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+}
+
+.container h2{
+    text-align:center;
+    color:#b8860b;
+    margin-bottom:40px;
+    font-size:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.content{
+    padding:25px;
+}
+
+.content h3{
+    color:#b8860b;
+    margin-bottom:10px;
+}
+
+.content p{
+    margin:8px 0;
+    line-height:1.6;
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+.buttons a{
+    display:inline-block;
+    text-decoration:none;
+    padding:12px 22px;
+    margin:5px;
+    border-radius:30px;
+    background:#b8860b;
+    color:white;
+    transition:.3s;
+}
+
+.buttons a:hover{
+    background:#000;
+}
+
+/* Footer */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:40px;
+}
+
+.hero-content p{
+    font-size:18px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="slideshow">
+
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+
+</div>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>Powerful Sermons</h1>
+
+<p>
+Be transformed by the living Word of God preached at Gospel Wonders Mission Church Bulenga.
+</p>
+<p>HEART BEATS FOR SOUL WINNING</p>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<h2>Latest Sermons</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="father.png">
+
+<div class="content">
+
+<h3>Walking by Faith</h3>
+
+<p><strong>Preacher:</strong> Pastor Robert Katweere</p>
+
+<p><strong>Scripture:</strong> Hebrews 11:1</p>
+
+<p><strong>Date:</strong> 20 July 2026</p>
+
+<div class="buttons">
+
+<a href="#">▶ Watch</a>
+
+<a href="#">🎧 Listen</a>
+
+<a href="#">📖 Notes</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="message2.jpg">
+
+<div class="content">
+
+<h3>The Power of Prayer</h3>
+
+<p><strong>Preacher:</strong> Pastor Miriam Katweere</p>
+
+<p><strong>Scripture:</strong> James 5:16</p>
+
+<p><strong>Date:</strong> 13 July 2026</p>
+
+<div class="buttons">
+
+<a href="#">▶ Watch</a>
+
+<a href="#">🎧 Listen</a>
+
+<a href="#">📖 Notes</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="message3.jpg">
+
+<div class="content">
+
+<h3>Victory in Christ</h3>
+
+<p><strong>Preacher:</strong> Pastor Robert Katweere</p>
+
+<p><strong>Scripture:</strong> Romans 8:37</p>
+
+<p><strong>Date:</strong> 6 July 2026</p>
+
+<div class="buttons">
+
+<a href="#">▶ Watch</a>
+
+<a href="#">🎧 Listen</a>
+
+<a href="#">📖 Notes</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Gospel Wonders Mission Church Bulenga | All Rights Reserved</p>
+
+</footer>
+
+</body>
+</html>
