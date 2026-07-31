@@ -1,0 +1,311 @@
+/* ==========================================
+   VOX OUTIS FASHION - Global Styles
+   ========================================== */
+
+/* CSS Variables for easy color theme changes */
+:root {
+  --bg-primary: #0f0f11;
+  --bg-secondary: #18181c;
+  --bg-card: #202025;
+  --text-main: #f5f5f7;
+  --text-muted: #a1a1aa;
+  --accent: #e6b800; /* Sleek gold accent */
+  --accent-hover: #ffd700;
+  --border-color: #2e2e36;
+  --transition: all 0.3s ease;
+  --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+/* Base Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================
+   Header & Navigation
+   ========================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 8%;
+  background-color: rgba(15, 15, 17, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navbar a:hover {
+  color: var(--accent);
+}
+
+#cart-count {
+  background-color: var(--accent);
+  color: #000;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+/* ==========================================
+   Hero Section
+   ========================================== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(15,15,17,0.7) 0%, rgba(15,15,17,1) 100%),
+              radial-gradient(circle at center, #252530 0%, #0f0f11 70%);
+  padding: 0 2rem;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.small-title {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  color: var(--accent);
+  display: block;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2.2rem;
+  background-color: var(--accent);
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  border: 2px solid var(--accent);
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+/* ==========================================
+   Product Section & Grid
+   ========================================== */
+.section {
+  padding: 5rem 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title p {
+  color: var(--accent);
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.product-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  background-color: var(--bg-secondary);
+}
+
+.product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+.product-info button {
+  margin-top: auto;
+  padding: 0.75rem;
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.product-info button:hover {
+  background-color: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+/* ==========================================
+   Brand Section
+   ========================================== */
+.brand-section {
+  background-color: var(--bg-secondary);
+  text-align: center;
+  padding: 5rem 2rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.brand-section h2 {
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.brand-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   Responsive Design (Mobile Support)
+   ========================================== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .section {
+    padding: 3rem 5%;
+  }
+}
