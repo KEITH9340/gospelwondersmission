@@ -1518,3 +1518,41 @@ right:75px;
 
 
 }
+.contact-form{
+
+max-width:700px;
+
+margin:60px auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+
+
+.contact-form input,
+.contact-form textarea{
+
+padding:15px;
+
+border-radius:15px;
+
+border:1px solid #ddd;
+
+font-family:Poppins;
+
+}
+
+
+
+.contact-form textarea{
+
+height:150px;
+
+resize:none;
+
+}
