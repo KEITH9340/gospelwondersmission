@@ -6,203 +6,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sermons | Gospel Wonders Mission Church Bulenga</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
-}
+<link rel="stylesheet" href="style.css">
 
-body{
-    background:#f5f5f5;
-}
 
-/* ================= HERO ================= */
-
-.hero{
-    position:relative;
-    width:100%;
-    height:100vh;
-    overflow:hidden;
-}
-
-.slideshow{
-    position:absolute;
-    width:100%;
-    height:100%;
-}
-
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background-size:cover;
-    background-position:center;
-    opacity:0;
-    animation:fade 20s infinite;
-}
-
-.slide:nth-child(1){
-    background-image:url("evan.jpg");
-    animation-delay:0s;
-}
-
-.slide:nth-child(2){
-    background-image:url("media.jpg");
-    animation-delay:5s;
-}
-
-.slide:nth-child(3){
-    background-image:url("men.jpg");
-    animation-delay:10s;
-}
-
-.slide:nth-child(4){
-    background-image:url("hi.jpg");
-    animation-delay:15s;
-}
-.slide:nth-child(4){
-    background-image:url("father.png");
-    animation-delay:15s;
-
-}
-@keyframes fade{
-
-0%{opacity:0;}
-5%{opacity:1;}
-25%{opacity:1;}
-30%{opacity:0;}
-100%{opacity:0;}
-
-}
-
-.overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.65);
-}
-
-.hero-content{
-    position:relative;
-    z-index:5;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
-    color:white;
-    padding:20px;
-}
-
-.hero-content h1{
-    font-size:65px;
-    margin-bottom:20px;
-}
-
-.hero-content p{
-    font-size:24px;
-    max-width:800px;
-}
-
-/* ================= SERMONS ================= */
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:70px auto;
-}
-
-.container h2{
-    text-align:center;
-    color:#b8860b;
-    margin-bottom:40px;
-    font-size:40px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,.15);
-    transition:.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.content{
-    padding:25px;
-}
-
-.content h3{
-    color:#b8860b;
-    margin-bottom:10px;
-}
-
-.content p{
-    margin:8px 0;
-    line-height:1.6;
-}
-
-.buttons{
-    margin-top:20px;
-}
-
-.buttons a{
-    display:inline-block;
-    text-decoration:none;
-    padding:12px 22px;
-    margin:5px;
-    border-radius:30px;
-    background:#b8860b;
-    color:white;
-    transition:.3s;
-}
-
-.buttons a:hover{
-    background:#000;
-}
-
-/* Footer */
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:60px;
-}
-
-@media(max-width:768px){
-
-.hero-content h1{
-    font-size:40px;
-}
-
-.hero-content p{
-    font-size:18px;
-}
-
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 </head>
 
+
+<body>
+
+
+<!-- ===============================
+          NAVIGATION
+================================ -->
+
+
+<header class="header">
+
+
+<a href="index.html" class="logo">
+
+<img src="icon.PNG" alt="Gospel Wonders Logo">
+
+<span>GWM</span>
+
+</a>
+
+
+
+<button class="menu-toggle">
+
+☰
+
+</button>
+
+
+
+<nav class="navbar">
+
+
+<a href="index.html" class="active">
+Home
+</a>
+
+
+<a href="about.HTML">
+About
+</a>
+
+
+<a href="ministries.HTML">
+Ministries
+</a>
+
+
+<a href="sermons.HTML">
+Sermons
+</a>
+
+
+<a href="events.HTML">
+Events
+</a>
+
+
+<a href="gallery.HTML">
+Gallery
+</a>
+
+
+<a href="contact.HTML">
+Contact
+</a>
+
+
+<a href="#donate" class="donate-btn">
+Donate
+</a>
+
+
+</nav>
+
+
+</header>
 <body>
 
 <section class="hero">
