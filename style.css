@@ -1821,3 +1821,59 @@ transform:scale(1.05);
 width:28px;
 height:28px;
 }
+/* ================= SOCIAL MEDIA ================= */
+
+.social{
+    color:#fff;
+}
+
+.social .icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.social h3,
+.social p{
+    color:#fff;
+}
+
+.social a{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 25px;
+    border-radius:30px;
+    background:#fff;
+    color:#222;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.social a:hover{
+    transform:scale(1.08);
+}
+
+/* Brand Colors */
+
+.facebook{
+    background:linear-gradient(135deg,#1877F2,#0A58CA);
+}
+
+.youtube{
+    background:linear-gradient(135deg,#ff0000,#c70000);
+}
+
+.instagram{
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+.whatsapp{
+    background:linear-gradient(135deg,#25D366,#128C7E);
+}
+
+.tiktok{
+    background:linear-gradient(135deg,#111,#333);
+}
+
+.email{
+    background:linear-gradient(135deg,#0078D4,#00A2FF);
+}
