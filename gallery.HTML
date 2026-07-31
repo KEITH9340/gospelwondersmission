@@ -5,182 +5,90 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gallery | Gospel Wonders Mission Church Bulenga</title>
+<link rel="stylesheet" href="style.css">
 
-<style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-    background:#f4f4f4;
-}
-
-/* HERO */
-
-.hero{
-    height:50vh;
-    background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("gallery-jo.jpg") center/cover;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:60px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    font-size:22px;
-}
-
-/* SECTION */
-
-.section{
-    width:90%;
-    max-width:1300px;
-    margin:60px auto;
-}
-
-.section h2{
-    text-align:center;
-    color:#b8860b;
-    margin-bottom:15px;
-}
-
-.section p{
-    text-align:center;
-    margin-bottom:40px;
-    color:#555;
-    font-size:18px;
-}
-
-/* GALLERY */
-
-.gallery{
-
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-
-}
-
-.gallery-item{
-
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-    transition:.4s;
-
-}
-
-.gallery-item:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.gallery-item img{
-
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    cursor:pointer;
-    transition:.5s;
-
-}
-
-.gallery-item:hover img{
-
-    transform:scale(1.08);
-
-}
-
-.caption{
-
-    padding:18px;
-    text-align:center;
-    font-weight:bold;
-    color:#444;
-
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-
-    position:fixed;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.95);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:999;
-
-}
-
-.lightbox img{
-
-    width:90%;
-    max-width:900px;
-    border-radius:10px;
-
-}
-
-.close{
-
-    position:absolute;
-    top:30px;
-    right:40px;
-    color:white;
-    font-size:45px;
-    cursor:pointer;
-
-}
-
-/* FOOTER */
-
-footer{
-
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:70px;
-
-}
-
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-}
-
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 </head>
 
+
+<body>
+
+
+<!-- ===============================
+          NAVIGATION
+================================ -->
+
+
+<header class="header">
+
+
+<a href="index.html" class="logo">
+
+<img src="icon.PNG" alt="Gospel Wonders Logo">
+
+<span>GWM</span>
+
+</a>
+
+
+
+<button class="menu-toggle">
+
+☰
+
+</button>
+
+
+
+<nav class="navbar">
+
+
+<a href="index.html" class="active">
+Home
+</a>
+
+
+<a href="about.HTML">
+About
+</a>
+
+
+<a href="ministries.HTML">
+Ministries
+</a>
+
+
+<a href="sermons.HTML">
+Sermons
+</a>
+
+
+<a href="events.HTML">
+Events
+</a>
+
+
+<a href="gallery.HTML">
+Gallery
+</a>
+
+
+<a href="contact.HTML">
+Contact
+</a>
+
+
+<a href="#donate" class="donate-btn">
+Donate
+</a>
+
+
+</nav>
+
+
+</header>
 <body>
 
 <section class="hero">
