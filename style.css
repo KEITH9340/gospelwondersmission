@@ -1,22 +1,29 @@
 /* =====================================================
-   GOSPEL WONDERS MISSION - MODERN HERO + NAVIGATION
-   ===================================================== */
+   GOSPEL WONDERS MISSION
+   PREMIUM MODERN WEBSITE STYLE
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 
 :root{
 
 --primary:#6a1b9a;
---secondary:#f9b233;
---dark:#111827;
---white:#ffffff;
---gray:#6b7280;
+--secondary:#fbbf24;
+--gold:#ffb703;
 
---glass:
-rgba(255,255,255,.12);
+--dark:#111827;
+--light:#f8fafc;
+
+--glass:rgba(255,255,255,.12);
+
+--shadow:
+0 20px 60px rgba(0,0,0,.25);
 
 --transition:.35s ease;
 
 }
+
 
 
 /* RESET */
@@ -37,11 +44,16 @@ scroll-behavior:smooth;
 }
 
 
+
 body{
 
 font-family:'Poppins',sans-serif;
-background:#f8fafc;
+
+background:var(--light);
+
 color:#111;
+
+overflow-x:hidden;
 
 }
 
@@ -54,29 +66,30 @@ text-decoration:none;
 }
 
 
-/* ===============================
-      MODERN NAVIGATION
-================================ */
-
 
 /* =====================================================
-   PREMIUM GOSPEL WONDERS NAVIGATION
+                 NAVIGATION
 ===================================================== */
 
 
 .header{
 
 position:fixed;
-top:25px;
+
+top:20px;
+
 left:50%;
+
 transform:translateX(-50%);
 
-width:90%;
-max-width:1250px;
 
-height:75px;
+width:min(92%,1250px);
+
+height:78px;
+
 
 padding:0 35px;
+
 
 display:flex;
 
@@ -85,15 +98,11 @@ align-items:center;
 justify-content:space-between;
 
 
+
 background:
 
-rgba(255,255,255,0.12);
+rgba(255,255,255,.15);
 
-
-backdrop-filter:blur(20px);
-
-
--webkit-backdrop-filter:blur(20px);
 
 
 border:
@@ -101,15 +110,22 @@ border:
 1px solid rgba(255,255,255,.25);
 
 
+
+backdrop-filter:blur(25px);
+
+
+
 border-radius:50px;
 
-
-z-index:9999;
 
 
 box-shadow:
 
-0 15px 40px rgba(0,0,0,.25);
+0 15px 45px rgba(0,0,0,.3);
+
+
+
+z-index:1000;
 
 
 transition:.4s;
@@ -119,17 +135,15 @@ transition:.4s;
 
 
 
+.header.scrolled{
 
-.header:hover{
 
 background:
 
-rgba(0,0,0,.65);
+rgba(17,24,39,.9);
 
 
 }
-
-
 
 
 
@@ -146,14 +160,15 @@ align-items:center;
 gap:12px;
 
 
-font-size:1.7rem;
+font-size:1.6rem;
 
 font-weight:900;
 
-letter-spacing:2px;
-
 
 color:white;
+
+
+letter-spacing:2px;
 
 
 }
@@ -163,13 +178,20 @@ color:white;
 .logo img{
 
 
-width:45px;
+width:50px;
 
-height:45px;
+height:50px;
+
 
 border-radius:50%;
 
+
 object-fit:cover;
+
+
+border:
+
+2px solid var(--gold);
 
 
 }
@@ -179,7 +201,7 @@ object-fit:cover;
 .logo span{
 
 
-color:#f9b233;
+color:var(--gold);
 
 
 }
@@ -187,7 +209,7 @@ color:#f9b233;
 
 
 
-/* NAVIGATION LINKS */
+/* NAV LINKS */
 
 
 .navbar{
@@ -197,7 +219,7 @@ display:flex;
 
 align-items:center;
 
-gap:10px;
+gap:8px;
 
 
 }
@@ -207,15 +229,13 @@ gap:10px;
 .navbar a{
 
 
-position:relative;
+color:white;
 
 
-padding:
-
-12px 18px;
+padding:12px 18px;
 
 
-border-radius:30px;
+border-radius:40px;
 
 
 font-size:.9rem;
@@ -224,36 +244,25 @@ font-size:.9rem;
 font-weight:600;
 
 
-color:white;
-
-
 text-transform:uppercase;
 
 
-letter-spacing:1px;
-
-
-transition:.35s;
+transition:.3s;
 
 
 }
 
-
-
-
-
-/* Hover background */
 
 
 .navbar a:hover{
 
 
-background:
+background:white;
 
-rgba(255,255,255,.15);
+color:var(--primary);
 
 
-color:#f9b233;
+transform:translateY(-3px);
 
 
 }
@@ -261,15 +270,10 @@ color:#f9b233;
 
 
 
-
-/* ACTIVE PAGE */
-
-
 .navbar a.active{
 
 
-background:#f9b233;
-
+background:var(--gold);
 
 color:#111;
 
@@ -279,47 +283,35 @@ color:#111;
 
 
 
+/* DONATE */
 
-/* DONATE BUTTON */
 
-
-.navbar .donate-btn{
+.donate-btn{
 
 
 background:
 
 linear-gradient(
 135deg,
-#f9b233,
-#ff8c00
+#ffb703,
+#fb8500
 );
 
 
-color:black;
 
-
-font-weight:800;
-
-
-padding:
-
-14px 28px;
+color:#111!important;
 
 
 box-shadow:
 
-0 10px 25px rgba(249,178,51,.35);
+0 10px 30px rgba(255,183,3,.4);
 
 
 }
 
 
 
-
-.navbar .donate-btn:hover{
-
-
-transform:translateY(-4px);
+.donate-btn:hover{
 
 
 background:white;
@@ -340,20 +332,18 @@ background:white;
 display:none;
 
 
-background:
+width:48px;
 
-rgba(255,255,255,.15);
-
-
-border:0;
-
-
-width:45px;
-
-height:45px;
+height:48px;
 
 
 border-radius:50%;
+
+
+border:none;
+
+
+background:rgba(255,255,255,.2);
 
 
 color:white;
@@ -369,110 +359,9 @@ cursor:pointer;
 
 
 
-
-/* MOBILE NAVIGATION */
-
-
-@media(max-width:900px){
-
-
-
-.header{
-
-
-width:95%;
-
-padding:0 20px;
-
-
-}
-
-
-
-.menu-toggle{
-
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-
-}
-
-
-
-
-.navbar{
-
-
-position:absolute;
-
-
-top:90px;
-
-
-left:0;
-
-
-width:100%;
-
-
-padding:25px;
-
-
-display:none;
-
-
-flex-direction:column;
-
-
-background:
-
-rgba(10,10,10,.9);
-
-
-border-radius:25px;
-
-
-backdrop-filter:blur(20px);
-
-
-}
-
-
-
-
-.navbar a{
-
-
-width:100%;
-
-text-align:center;
-
-
-}
-
-
-
-.navbar.show{
-
-
-display:flex;
-
-
-}
-
-
-}
-
-
-
-
-/* ===============================
-            HERO SECTION
-================================ */
+/* =====================================================
+                    HERO
+===================================================== */
 
 
 .hero{
@@ -483,10 +372,9 @@ height:100vh;
 
 display:flex;
 
+align-items:center;
 
 justify-content:center;
-
-align-items:center;
 
 
 text-align:center;
@@ -495,15 +383,18 @@ text-align:center;
 position:relative;
 
 
-background-image:
+
+background:
+
 
 linear-gradient(
 
 rgba(0,0,0,.55),
 
-rgba(0,0,0,.75)
+rgba(0,0,0,.8)
 
 ),
+
 
 url("images/church-hero.jpg");
 
@@ -518,25 +409,59 @@ color:white;
 
 
 
+overflow:hidden;
+
+
 }
 
 
+
+
+.hero::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background:
+
+radial-gradient(
+
+circle,
+
+transparent,
+
+rgba(0,0,0,.5)
+
+);
+
+
+
+}
 
 
 
 .hero-content{
 
 
-max-width:900px;
+position:relative;
+
+
+max-width:950px;
 
 
 animation:
 
-heroShow 1.5s ease;
+fadeUp 1.4s ease;
 
 
 }
-
 
 
 
@@ -544,16 +469,16 @@ heroShow 1.5s ease;
 .hero small{
 
 
-color:var(--secondary);
+color:var(--gold);
+
+
+letter-spacing:6px;
+
+
+font-weight:800;
 
 
 font-size:1rem;
-
-
-letter-spacing:5px;
-
-
-font-weight:700;
 
 
 }
@@ -564,19 +489,19 @@ font-weight:700;
 .hero h1{
 
 
-font-size:4.5rem;
+font-size:clamp(2.8rem,6vw,5rem);
 
 
 font-weight:900;
 
 
-line-height:1.1;
+line-height:1.05;
+
+
+margin:25px 0;
 
 
 text-transform:uppercase;
-
-
-margin:20px 0;
 
 
 }
@@ -586,23 +511,27 @@ margin:20px 0;
 .hero h1 span{
 
 
-color:var(--secondary);
+color:var(--gold);
 
 
 }
 
 
 
+
 .hero p{
+
+
+max-width:750px;
+
+
+margin:auto;
 
 
 font-size:1.2rem;
 
 
-max-width:700px;
-
-
-margin:auto;
+line-height:1.8;
 
 
 color:#eee;
@@ -612,15 +541,13 @@ color:#eee;
 
 
 
-
-
 /* BUTTONS */
 
 
 .hero-buttons{
 
 
-margin-top:40px;
+margin-top:45px;
 
 
 display:flex;
@@ -636,11 +563,10 @@ gap:20px;
 
 
 
-
 .btn{
 
 
-padding:15px 40px;
+padding:16px 42px;
 
 
 border-radius:50px;
@@ -649,23 +575,21 @@ border-radius:50px;
 font-weight:800;
 
 
-transition:.3s;
-
-
-display:inline-block;
+transition:.35s;
 
 
 }
 
 
 
+
 .btn-primary{
 
 
-background:var(--secondary);
+background:var(--gold);
 
 
-color:black;
+color:#111;
 
 
 }
@@ -677,7 +601,11 @@ color:black;
 
 background:white;
 
-transform:translateY(-5px);
+
+transform:translateY(-6px);
+
+
+box-shadow:0 15px 30px rgba(0,0,0,.3);
 
 
 }
@@ -689,6 +617,7 @@ transform:translateY(-5px);
 
 
 border:2px solid white;
+
 
 color:white;
 
@@ -702,7 +631,7 @@ color:white;
 
 background:white;
 
-color:black;
+color:#111;
 
 
 }
@@ -710,42 +639,16 @@ color:black;
 
 
 
-/* HERO ANIMATION */
-
-
-@keyframes heroShow{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(50px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-
-
-/* ===============================
-      SECTION HEADINGS
-================================ */
+/* =====================================================
+              SECTION TITLES
+===================================================== */
 
 
 .section-title{
 
 
 text-align:center;
+
 
 margin-bottom:60px;
 
@@ -763,6 +666,9 @@ font-size:3rem;
 color:var(--primary);
 
 
+font-weight:900;
+
+
 }
 
 
@@ -770,20 +676,22 @@ color:var(--primary);
 .section-title p{
 
 
-letter-spacing:3px;
+color:var(--gold);
+
+
+letter-spacing:4px;
+
 
 font-weight:700;
-
-color:var(--secondary);
 
 
 }
 
 
 
-/* ===============================
-      MISSION CARDS
-================================ */
+/* =====================================================
+                 CARDS
+===================================================== */
 
 
 .cards{
@@ -810,15 +718,16 @@ gap:30px;
 background:white;
 
 
-padding:35px;
+padding:40px;
 
 
-border-radius:25px;
+border-radius:30px;
 
 
 box-shadow:
 
-0 15px 40px rgba(0,0,0,.1);
+0 20px 50px rgba(0,0,0,.08);
+
 
 
 transition:.4s;
@@ -831,12 +740,15 @@ transition:.4s;
 .card:hover{
 
 
-transform:translateY(-12px);
+transform:
+
+translateY(-15px);
+
 
 
 box-shadow:
 
-0 25px 50px rgba(0,0,0,.18);
+0 30px 70px rgba(0,0,0,.18);
 
 
 }
@@ -856,36 +768,52 @@ margin-bottom:15px;
 
 
 
-/* ===============================
-        MOBILE MENU
-================================ */
+
+/* =====================================================
+                 ANIMATION
+===================================================== */
 
 
-.menu-toggle{
+@keyframes fadeUp{
 
 
-display:none;
+from{
 
-font-size:2rem;
+opacity:0;
 
-color:white;
+transform:translateY(60px);
 
-cursor:pointer;
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 
 }
 
 
 
+/* =====================================================
+                 RESPONSIVE
+===================================================== */
 
-@media(max-width:768px){
 
+@media(max-width:900px){
 
 
 .header{
 
 
-padding:18px 5%;
+width:94%;
+
+
+padding:0 20px;
 
 
 }
@@ -895,7 +823,12 @@ padding:18px 5%;
 .menu-toggle{
 
 
-display:block;
+display:flex;
+
+
+align-items:center;
+
+justify-content:center;
 
 
 }
@@ -908,7 +841,7 @@ display:block;
 position:absolute;
 
 
-top:80px;
+top:90px;
 
 
 left:0;
@@ -917,16 +850,33 @@ left:0;
 width:100%;
 
 
-background:#111;
+padding:25px;
+
+
+background:
+
+rgba(17,24,39,.95);
+
+
+border-radius:25px;
+
+
+display:none;
 
 
 flex-direction:column;
 
 
-padding:30px;
+}
 
 
-display:none;
+
+.navbar a{
+
+
+width:100%;
+
+text-align:center;
 
 
 }
@@ -942,11 +892,28 @@ display:flex;
 }
 
 
+}
+
+
+
+@media(max-width:600px){
+
+
 
 .hero h1{
 
 
-font-size:2.7rem;
+font-size:2.5rem;
+
+
+}
+
+
+
+.hero p{
+
+
+font-size:1rem;
 
 
 }
@@ -959,7 +926,27 @@ font-size:2.7rem;
 flex-direction:column;
 
 
-align-items:center;
+}
+
+
+
+.btn{
+
+
+width:220px;
+
+
+margin:auto;
+
+
+}
+
+
+
+.logo{
+
+
+font-size:1.2rem;
 
 
 }
