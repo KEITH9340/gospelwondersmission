@@ -1,190 +1,345 @@
 /* =====================================================
-   GOSPEL WONDERS MISSION - PREMIUM WEBSITE CSS
+   GOSPEL WONDERS MISSION - MODERN HERO + NAVIGATION
    ===================================================== */
 
-:root {
-    --primary: #7b2cbf;
-    --secondary: #ffb703;
-    --dark: #111827;
-    --dark-soft: #1f2937;
-    --light: #ffffff;
-    --gray: #6b7280;
-    --bg: #f8fafc;
-    --border: #e5e7eb;
 
-    --shadow: 0 15px 35px rgba(0,0,0,.12);
-    --transition: .3s ease;
+:root{
 
-    --font:
-    "Poppins",
-    "Segoe UI",
-    sans-serif;
+--primary:#6a1b9a;
+--secondary:#f9b233;
+--dark:#111827;
+--white:#ffffff;
+--gray:#6b7280;
+
+--glass:
+rgba(255,255,255,.12);
+
+--transition:.35s ease;
+
 }
 
 
-/* ================= RESET ================= */
+/* RESET */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
 }
 
 
 html{
-    scroll-behavior:smooth;
+
+scroll-behavior:smooth;
+
 }
 
 
 body{
 
-    font-family:var(--font);
-    background:var(--bg);
-    color:var(--dark);
-    line-height:1.7;
+font-family:'Poppins',sans-serif;
+background:#f8fafc;
+color:#111;
+
 }
 
-
-img{
-    width:100%;
-    display:block;
-}
 
 
 a{
-    text-decoration:none;
-    color:inherit;
+
+text-decoration:none;
+
 }
 
 
-/* ================= HEADER ================= */
+/* ===============================
+      MODERN NAVIGATION
+================================ */
 
-header,
+
 .header{
 
-    position:sticky;
-    top:0;
-    z-index:999;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+position:fixed;
 
-    padding:20px 8%;
+top:0;
+left:0;
 
-    background:
-    rgba(255,255,255,.85);
+width:100%;
 
-    backdrop-filter:blur(12px);
+z-index:1000;
 
-    border-bottom:1px solid var(--border);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+
+padding:20px 8%;
+
+
+background:
+
+rgba(20,20,20,.35);
+
+
+backdrop-filter:blur(15px);
+
+
+border-bottom:
+
+1px solid rgba(255,255,255,.15);
+
+
+transition:.4s;
+
 
 }
+
+
+
+.header:hover{
+
+
+background:
+
+rgba(0,0,0,.75);
+
+
+}
+
+
 
 
 
 .logo{
 
-    font-size:1.8rem;
-    font-weight:900;
 
-    color:var(--primary);
+font-size:2rem;
 
-    letter-spacing:2px;
+font-weight:900;
+
+letter-spacing:2px;
+
+color:white;
+
 
 }
+
 
 
 .logo span{
 
-    color:var(--secondary);
+color:var(--secondary);
 
 }
 
 
 
-nav,
+
 .navbar{
 
-    display:flex;
-    gap:30px;
+
+display:flex;
+
+align-items:center;
+
+gap:35px;
+
+
 }
 
 
 
-nav a,
+
 .navbar a{
 
-    font-weight:600;
 
-    color:var(--dark);
+position:relative;
 
-    transition:var(--transition);
+
+color:white;
+
+
+font-size:.95rem;
+
+font-weight:600;
+
+
+text-transform:uppercase;
+
+
+transition:var(--transition);
+
 
 }
 
 
 
-nav a:hover,
+
+
+.navbar a::after{
+
+
+content:"";
+
+position:absolute;
+
+
+left:0;
+
+bottom:-8px;
+
+
+width:0%;
+
+
+height:3px;
+
+
+background:var(--secondary);
+
+
+transition:.3s;
+
+
+}
+
+
+
+.navbar a:hover::after{
+
+
+width:100%;
+
+
+}
+
+
+
 .navbar a:hover{
 
-    color:var(--primary);
+
+color:var(--secondary);
+
 
 }
 
 
-/* ================= HERO ================= */
+
+
+/* ===============================
+            HERO SECTION
+================================ */
 
 
 .hero{
 
-    min-height:90vh;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:40px 8%;
+height:100vh;
 
 
-    background:
-
-    linear-gradient(
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.65)
-    ),
-
-    url("images/church.jpg");
+display:flex;
 
 
-    background-size:cover;
-    background-position:center;
+justify-content:center;
 
-    color:white;
+align-items:center;
+
+
+text-align:center;
+
+
+position:relative;
+
+
+background-image:
+
+linear-gradient(
+
+rgba(0,0,0,.55),
+
+rgba(0,0,0,.75)
+
+),
+
+url("images/church-hero.jpg");
+
+
+
+background-size:cover;
+
+background-position:center;
+
+
+color:white;
+
+
 
 }
+
+
 
 
 
 .hero-content{
 
-    max-width:850px;
+
+max-width:900px;
+
+
+animation:
+
+heroShow 1.5s ease;
+
 
 }
 
 
 
+
+
+.hero small{
+
+
+color:var(--secondary);
+
+
+font-size:1rem;
+
+
+letter-spacing:5px;
+
+
+font-weight:700;
+
+
+}
+
+
+
+
 .hero h1{
 
-    font-size:4rem;
 
-    font-weight:900;
+font-size:4.5rem;
 
-    text-transform:uppercase;
 
-    line-height:1.1;
+font-weight:900;
+
+
+line-height:1.1;
+
+
+text-transform:uppercase;
+
+
+margin:20px 0;
+
 
 }
 
@@ -192,7 +347,9 @@ nav a:hover,
 
 .hero h1 span{
 
-    color:var(--secondary);
+
+color:var(--secondary);
+
 
 }
 
@@ -200,355 +357,132 @@ nav a:hover,
 
 .hero p{
 
-    margin:25px auto;
 
-    max-width:650px;
+font-size:1.2rem;
 
-    font-size:1.2rem;
 
-    opacity:.9;
+max-width:700px;
+
+
+margin:auto;
+
+
+color:#eee;
+
 
 }
 
 
-/* ================= BUTTONS ================= */
+
+
+
+/* BUTTONS */
+
+
+.hero-buttons{
+
+
+margin-top:40px;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+gap:20px;
+
+
+}
+
+
 
 
 .btn{
 
-    display:inline-block;
 
-    padding:15px 35px;
+padding:15px 40px;
 
-    border-radius:50px;
 
-    background:var(--secondary);
+border-radius:50px;
 
-    color:#000;
 
-    font-weight:800;
+font-weight:800;
 
-    transition:var(--transition);
+
+transition:.3s;
+
+
+display:inline-block;
+
 
 }
 
 
 
-.btn:hover{
+.btn-primary{
 
-    transform:translateY(-5px);
 
-    background:white;
+background:var(--secondary);
+
+
+color:black;
+
 
 }
 
 
 
-/* ================= SECTIONS ================= */
+.btn-primary:hover{
 
 
-section{
+background:white;
 
-    padding:80px 8%;
+transform:translateY(-5px);
+
 
 }
 
 
 
-.section-title{
 
-    text-align:center;
+.btn-outline{
 
-    margin-bottom:50px;
+
+border:2px solid white;
+
+color:white;
+
 
 }
 
 
 
-.section-title h2{
+.btn-outline:hover{
 
-    font-size:2.6rem;
 
-    color:var(--dark);
+background:white;
+
+color:black;
+
 
 }
 
 
 
-.section-title p{
 
-    color:var(--primary);
+/* HERO ANIMATION */
 
-    font-weight:700;
 
-    text-transform:uppercase;
+@keyframes heroShow{
 
-    letter-spacing:3px;
-
-}
-
-
-
-/* ================= CARDS ================= */
-
-
-.card-container,
-.cards,
-.grid{
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
-}
-
-
-
-.card{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:var(--shadow);
-
-    transition:var(--transition);
-
-}
-
-
-
-.card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-
-
-.card h3{
-
-    color:var(--primary);
-
-    margin-bottom:10px;
-
-}
-
-
-
-.card p{
-
-    color:var(--gray);
-
-}
-
-
-
-/* ================= IMAGE CARDS ================= */
-
-
-.image-card{
-
-    overflow:hidden;
-
-    border-radius:20px;
-
-    background:white;
-
-    box-shadow:var(--shadow);
-
-}
-
-
-
-.image-card img{
-
-    height:280px;
-
-    object-fit:cover;
-
-    transition:.5s;
-
-}
-
-
-
-.image-card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-
-/* ================= MISSION SECTION ================= */
-
-
-.mission{
-
-    background:
-
-    linear-gradient(
-    120deg,
-    var(--primary),
-    #4c1d95
-    );
-
-    color:white;
-
-    text-align:center;
-
-}
-
-
-
-.mission h2{
-
-    font-size:3rem;
-
-}
-
-
-
-.mission p{
-
-    max-width:800px;
-
-    margin:auto;
-
-    opacity:.9;
-
-}
-
-
-
-/* ================= EVENTS ================= */
-
-
-.event{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:25px;
-
-    box-shadow:var(--shadow);
-
-}
-
-
-
-.event-date{
-
-    color:var(--secondary);
-
-    font-weight:800;
-
-}
-
-
-
-/* ================= DONATION ================= */
-
-
-.donation{
-
-    text-align:center;
-
-    background:#fff7ed;
-
-}
-
-
-
-.donation h2{
-
-    color:#9a3412;
-
-}
-
-
-
-/* ================= CONTACT ================= */
-
-
-.contact-box{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:25px;
-
-}
-
-
-
-.contact-item{
-
-    background:white;
-
-    padding:25px;
-
-    border-radius:15px;
-
-    box-shadow:var(--shadow);
-
-}
-
-
-
-/* ================= FOOTER ================= */
-
-
-footer{
-
-    background:#111827;
-
-    color:white;
-
-    padding:50px 8%;
-
-    text-align:center;
-
-}
-
-
-
-footer p{
-
-    color:#9ca3af;
-
-}
-
-
-
-/* ================= ANIMATION ================= */
-
-
-.fade{
-
-    animation:
-    fadeIn 1s ease;
-
-}
-
-
-
-@keyframes fadeIn{
 
 from{
 
 opacity:0;
 
-transform:translateY(30px);
+transform:translateY(50px);
 
 }
 
@@ -565,53 +499,18 @@ transform:translateY(0);
 
 
 
-/* ================= MOBILE ================= */
+/* ===============================
+      SECTION HEADINGS
+================================ */
 
 
-@media(max-width:768px){
+.section-title{
 
 
-header,
-.header{
+text-align:center;
 
-    flex-direction:column;
+margin-bottom:60px;
 
-    gap:20px;
-
-}
-
-
-
-nav,
-.navbar{
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-}
-
-
-
-.hero h1{
-
-    font-size:2.5rem;
-
-}
-
-
-
-.hero p{
-
-    font-size:1rem;
-
-}
-
-
-
-section{
-
-    padding:50px 5%;
 
 }
 
@@ -619,7 +518,211 @@ section{
 
 .section-title h2{
 
-    font-size:2rem;
+
+font-size:3rem;
+
+
+color:var(--primary);
+
+
+}
+
+
+
+.section-title p{
+
+
+letter-spacing:3px;
+
+font-weight:700;
+
+color:var(--secondary);
+
+
+}
+
+
+
+/* ===============================
+      MISSION CARDS
+================================ */
+
+
+.cards{
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(280px,1fr));
+
+
+gap:30px;
+
+
+}
+
+
+
+.card{
+
+
+background:white;
+
+
+padding:35px;
+
+
+border-radius:25px;
+
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.1);
+
+
+transition:.4s;
+
+
+}
+
+
+
+.card:hover{
+
+
+transform:translateY(-12px);
+
+
+box-shadow:
+
+0 25px 50px rgba(0,0,0,.18);
+
+
+}
+
+
+
+.card h3{
+
+
+color:var(--primary);
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+/* ===============================
+        MOBILE MENU
+================================ */
+
+
+.menu-toggle{
+
+
+display:none;
+
+font-size:2rem;
+
+color:white;
+
+cursor:pointer;
+
+
+}
+
+
+
+
+@media(max-width:768px){
+
+
+
+.header{
+
+
+padding:18px 5%;
+
+
+}
+
+
+
+.menu-toggle{
+
+
+display:block;
+
+
+}
+
+
+
+.navbar{
+
+
+position:absolute;
+
+
+top:80px;
+
+
+left:0;
+
+
+width:100%;
+
+
+background:#111;
+
+
+flex-direction:column;
+
+
+padding:30px;
+
+
+display:none;
+
+
+}
+
+
+
+.navbar.active{
+
+
+display:flex;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-size:2.7rem;
+
+
+}
+
+
+
+.hero-buttons{
+
+
+flex-direction:column;
+
+
+align-items:center;
+
 
 }
 
