@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -11,24 +11,668 @@
 
 <link rel="icon" href="icon.PNG">
 
-<link rel="stylesheet" href="style.css">
-
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f7f7f7;
+    color: #222;
+    transition: background 0.4s, color 0.4s;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    width: 100%;
+    min-height: 75px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    transition: 0.4s;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #111;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.logo span {
+    letter-spacing: 1px;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar a {
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #e09b00;
+}
+
+.navbar a.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #e09b00;
+    left: 0;
+    bottom: -7px;
+}
+
+
+/* DONATE BUTTON */
+
+.navbar .donate-btn {
+    background: #e09b00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.navbar .donate-btn:hover {
+    background: #c78300;
+    color: white;
+}
+
+
+/* THEME BUTTON */
+
+.theme-toggle {
+    border: none;
+    background: #f1f1f1;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    margin-left: 15px;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+
+/* MOBILE MENU */
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 88vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)),
+        url("church.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    max-width: 900px;
+    color: white;
+    animation: fadeUp 1s ease;
+}
+
+.hero-content small {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #e09b00;
+}
+
+.hero-content h1 {
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.05;
+    font-weight: 900;
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #e09b00;
+}
+
+.hero-content p {
+    max-width: 700px;
+    margin: 20px auto 30px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #eeeeee;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 27px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #e09b00;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #c78300;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #222;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+.section {
+    padding: 80px 7%;
+    background: white;
+    transition: 0.4s;
+}
+
+.section-content {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.section h2 span {
+    color: #e09b00;
+}
+
+.section-intro {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    color: #666;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border: 1px solid #eeeeee;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.13);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.home-cta {
+    padding: 80px 20px;
+    background:
+        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
+        url("church.jpg");
+
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+
+.home-cta h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.home-cta p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    background: #111;
+    color: white;
+    padding: 60px 7% 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-column h3 {
+    color: #e09b00;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.footer-brand h2 {
+    font-size: 20px;
+}
+
+.footer-column p {
+    color: #bbb;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 11px;
+}
+
+.footer-column ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #e09b00;
+    padding-left: 5px;
+}
+
+
+/* SOCIAL MEDIA */
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    background: #e09b00;
+    transform: translateY(-3px);
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 45px;
+    padding-top: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   DAY / NIGHT MODE
+========================================= */
+
+body.dark-mode {
+    background: #121212;
+    color: #f5f5f5;
+}
+
+body.dark-mode .header {
+    background: #1b1b1b;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .logo {
+    color: white;
+}
+
+body.dark-mode .navbar a {
+    color: #eee;
+}
+
+body.dark-mode .navbar a:hover,
+body.dark-mode .navbar a.active {
+    color: #e09b00;
+}
+
+body.dark-mode .theme-toggle {
+    background: #333;
+    color: white;
+}
+
+body.dark-mode .section {
+    background: #1b1b1b;
+    color: white;
+}
+
+body.dark-mode .section-intro {
+    color: #bbb;
+}
+
+body.dark-mode .card {
+    background: #252525;
+    border-color: #333;
+}
+
+body.dark-mode .card h3 {
+    color: white;
+}
+
+body.dark-mode .card p {
+    color: #bbb;
+}
+
+body.dark-mode .home-cta {
+    background:
+        linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.88)),
+        url("church.jpg");
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+
+        display: none;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 25px;
+        gap: 20px;
+
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .theme-toggle {
+        order: 3;
+        margin-left: 0;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 10px 5%;
+    }
+
+    .hero {
+        min-height: 85vh;
+        background-attachment: scroll;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .home-cta h2 {
+        font-size: 28px;
+    }
+
+}
+
+
+/* DARK MOBILE MENU */
+
+@media (max-width: 900px) {
+
+    body.dark-mode .navbar {
+        background: #1b1b1b;
+    }
+
+}
+
+</style>
 
 </head>
 
-
 <body>
-
 
 <!-- ===============================
           NAVIGATION
 ================================ -->
 
-
 <header class="header">
-
 
 <a href="index.html" class="logo">
 
@@ -38,155 +682,443 @@
 
 </a>
 
-
-
-<button class="menu-toggle">
-
+<button class="menu-toggle" id="menuToggle">
 ☰
-
 </button>
 
-
-
-<nav class="navbar">
-
+<nav class="navbar" id="navbar">
 
 <a href="index.html" class="active">
 Home
 </a>
 
-
 <a href="about.HTML">
 About
 </a>
-
 
 <a href="ministries.HTML">
 Ministries
 </a>
 
-
 <a href="sermons.HTML">
 Sermons
 </a>
-
 
 <a href="events.html">
 Events
 </a>
 
-
 <a href="gallery.HTML">
 Gallery
 </a>
-
 
 <a href="contact.html">
 Contact
 </a>
 
-
 <a href="donate.html" class="donate-btn">
 Donate
 </a>
 
-
 </nav>
+
 <button class="theme-toggle" id="themeToggle">
 🌙
 </button>
 
 </header>
 
-
-
-
-
 <!-- ===============================
-              HERO SECTION
+              HERO
 ================================ -->
-
 
 <section class="hero">
 
-
 <div class="hero-content">
-
 
 <small>
 WELCOME TO
 </small>
 
-
-
 <h1>
-
 GOSPEL
-
-<span>
-WONDERS MISSION CHURCH 
-</span>
-
+<span>WONDERS MISSION CHURCH</span>
 </h1>
 
-
-
-
 <p>
-
 Spreading God's Word, transforming lives,
 and serving communities through faith,
 love and hope.
-
 </p>
-
-
-
-
 
 <div class="hero-buttons">
 
-
 <a href="about.HTML" class="btn btn-primary">
-
 Learn More
-
 </a>
-
-
 
 <a href="donate.html" class="btn btn-outline">
-
 Support Mission
-
 </a>
 
-
-
 </div>
 
-
-
 </div>
-
-
 
 </section>
 
+<!-- ===============================
+        WELCOME SECTION
+================================ -->
 
+<section class="section">
 
+<div class="section-content">
 
+<h2>
+Welcome to <span>GWMC</span>
+</h2>
 
-<footer>
+<p class="section-intro">
+Gospel Wonders Mission Church Bulenga is a Christ-centered
+community committed to spreading the Gospel, strengthening
+families and serving people with faith, love and compassion.
+</p>
 
+<div class="cards">
+
+<div class="card">
+
+<div class="card-icon">
+🙏
+</div>
+
+<h3>
+Worship
+</h3>
+
+<p>
+Come together with us as we worship God,
+pray and grow deeper in our relationship
+with Christ.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+❤️
+</div>
+
+<h3>
+Community
+</h3>
+
+<p>
+We believe in serving one another and
+building a caring church family where
+everyone is welcome.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+📖
+</div>
+
+<h3>
+The Gospel
+</h3>
+
+<p>
+We are committed to sharing God's Word
+and helping people discover hope and
+purpose through Jesus Christ.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===============================
+             CTA
+================================ -->
+
+<section class="home-cta">
+
+<h2>
+Be Part of Our Church Family
+</h2>
+
+<p>
+Whether you are looking for a church home,
+want to grow in faith or simply need someone
+to pray with you, you are welcome at
+Gospel Wonders Mission Church Bulenga.
+</p>
+
+<a href="contact.html" class="btn btn-primary">
+Contact Us
+</a>
+
+</section>
+
+<!-- ===============================
+             FOOTER
+================================ -->
+
+<footer class="site-footer">
+
+<div class="footer-container">
+
+<!-- CHURCH INFO -->
+
+<div class="footer-column">
+
+<div class="footer-brand">
+
+<img src="icon.PNG" alt="GWMC Logo">
+
+<h2>Gospel Wonders Mission</h2>
+
+</div>
+
+<p>
+Spreading God's Word, transforming lives
+and serving communities through faith,
+love and hope.
+</p>
+
+<div class="social-links">
+
+<a href="#" aria-label="Facebook">
+f
+</a>
+
+<a href="#" aria-label="YouTube">
+▶
+</a>
+
+<a href="#" aria-label="Instagram">
+◎
+</a>
+
+<a href="#" aria-label="WhatsApp">
+☏
+</a>
+
+</div>
+
+</div>
+
+<!-- QUICK LINKS -->
+
+<div class="footer-column">
+
+<h3>
+Quick Links
+</h3>
+
+<ul>
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="about.HTML">About Us</a>
+</li>
+
+<li>
+<a href="ministries.HTML">Ministries</a>
+</li>
+
+<li>
+<a href="sermons.HTML">Sermons</a>
+</li>
+
+<li>
+<a href="events.html">Events</a>
+</li>
+
+<li>
+<a href="gallery.HTML">Gallery</a>
+</li>
+
+<li>
+<a href="contact.html">Contact Us</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- CHURCH LINKS -->
+
+<div class="footer-column">
+
+<h3>
+Church
+</h3>
+
+<ul>
+
+<li>
+<a href="prayer.html">Prayer Request</a>
+</li>
+
+<li>
+<a href="leadership.html">Leadership</a>
+</li>
+
+<li>
+<a href="join.html">Join Us</a>
+</li>
+
+<li>
+<a href="location.html">Our Location</a>
+</li>
+
+<li>
+<a href="donate.html">Donate</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="footer-column">
+
+<h3>
+Contact
+</h3>
+
+<p>
+📍 Bulenga, Uganda
+</p>
+
+<p>
+📞 +256 XXX XXX XXX
+</p>
+
+<p>
+✉️ gospelwondersmission@gmail.com
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
 
 © 2026 Gospel Wonders Mission Church Bulenga.
 All Rights Reserved.
 
+<br>
+
+Designed & Developed with ❤️
+
+</div>
 
 </footer>
 
-<script src="SCRIPT.JS"></script>
+<!-- ===============================
+        JAVASCRIPT
+================================ -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+/* =================================
+   MOBILE MENU
+================================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const navbar = document.getElementById("navbar");
+
+if (menuToggle && navbar) {
+
+    menuToggle.addEventListener("click", function () {
+
+        navbar.classList.toggle("active");
+
+        if (navbar.classList.contains("active")) {
+
+            menuToggle.textContent = "✕";
+
+        } else {
+
+            menuToggle.textContent = "☰";
+
+        }
+
+    });
+
+}
+
+
+
+/* =================================
+   DAY / NIGHT MODE
+================================= */
+
+const themeToggle = document.getElementById("themeToggle");
+
+
+/* Load saved theme */
+
+if (localStorage.getItem("theme") === "dark") {
+
+    document.body.classList.add("dark-mode");
+
+    themeToggle.textContent = "☀️";
+
+}
+
+
+/* Toggle theme */
+
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark-mode");
+
+
+        if (document.body.classList.contains("dark-mode")) {
+
+            themeToggle.textContent = "☀️";
+
+            localStorage.setItem("theme", "dark");
+
+        } else {
+
+            themeToggle.textContent = "🌙";
+
+            localStorage.setItem("theme", "light");
+
+        }
+
+    });
+
+}
+
+
+});
+
+</script>
+
 </body>
 
 </html>
