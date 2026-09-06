@@ -4,7 +4,6 @@
 
 <head>
 
-```
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,10 +11,769 @@
 
 <link rel="icon" href="icon.PNG">
 
-<link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-```
+
+<style>
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+
+    background: rgba(17, 17, 17, 0.97);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 5%;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-left: auto;
+}
+
+.navbar a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #d4af37;
+}
+
+
+/* DONATE */
+
+.navbar .donate-btn {
+    background: #d4af37;
+
+    color: #111;
+
+    padding: 9px 20px;
+
+    border-radius: 25px;
+
+    font-weight: 700;
+}
+
+.navbar .donate-btn:hover {
+    background: white;
+
+    color: #111;
+}
+
+
+/* MENU BUTTON */
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* THEME BUTTON */
+
+.theme-toggle {
+    margin-left: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.banner {
+    margin-top: 75px;
+}
+
+.hero {
+    min-height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)
+        ),
+        url("church.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 18px;
+
+    margin-top: 5px;
+
+    color: #eee;
+}
+
+
+/* BANNER CONTENT */
+
+.banner-content {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: white;
+}
+
+.banner-content h1 {
+    font-size: 28px;
+
+    font-weight: 700;
+}
+
+.banner-content p {
+    color: #666;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: 90%;
+
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+    background: white;
+
+    margin-top: 35px;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+
+    position: relative;
+}
+
+.section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 50px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin-top: 8px;
+}
+
+.section p {
+    color: #555;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.card {
+    background: #fafafa;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border: 1px solid #eee;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.10);
+}
+
+.card-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CALL TO ACTION
+========================================= */
+
+.about-cta {
+    margin-top: 40px;
+
+    margin-bottom: 50px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #292929
+        );
+
+    color: white;
+}
+
+.about-cta h2 {
+    font-size: 30px;
+}
+
+.about-cta p {
+    color: #ccc;
+
+    max-width: 650px;
+
+    margin: 10px auto 25px;
+}
+
+.cta-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-block;
+
+    padding: 12px 28px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+
+    background: white;
+}
+
+.cta-btn.secondary {
+    background: transparent;
+
+    border: 1px solid #d4af37;
+
+    color: white;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    background: #111;
+
+    color: white;
+
+    margin-top: 60px;
+
+    padding-top: 60px;
+}
+
+.footer-container {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1.5fr;
+
+    gap: 45px;
+}
+
+
+/* FOOTER LOGO */
+
+.footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.footer-logo img {
+    width: 52px;
+
+    height: 52px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+.footer-logo span {
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+/* FOOTER TEXT */
+
+.footer-column p {
+    color: #bbb;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.footer-motto {
+    margin-top: 15px;
+}
+
+
+/* FOOTER HEADINGS */
+
+.footer-column h3 {
+    color: white;
+
+    font-size: 19px;
+
+    margin-bottom: 22px;
+
+    position: relative;
+}
+
+.footer-column h3::after {
+    content: "";
+
+    display: block;
+
+    width: 40px;
+
+    height: 3px;
+
+    background: #d4af37;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   QUICK LINKS
+   SAME STYLE AS WEBSITE
+========================================= */
+
+.footer-links {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bbb;
+
+    text-decoration: none;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+
+    padding-left: 5px;
+}
+
+
+/* =========================================
+   SOCIAL MEDIA
+========================================= */
+
+.footer-column h4 {
+    margin-top: 22px;
+
+    margin-bottom: 12px;
+
+    font-size: 16px;
+}
+
+.social-links {
+    display: flex;
+
+    gap: 10px;
+}
+
+.social-links a {
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #555;
+
+    border-radius: 50%;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: #d4af37;
+
+    color: #111;
+
+    border-color: #d4af37;
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+    border-top: 1px solid #333;
+
+    margin-top: 50px;
+
+    padding: 22px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .menu-toggle {
+        display: block;
+
+        margin-left: auto;
+    }
+
+    .navbar {
+        display: none;
+
+        position: absolute;
+
+        top: 75px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: #111;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        gap: 18px;
+
+        text-align: center;
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+
+    .theme-toggle {
+        margin-left: 15px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 25px 20px;
+    }
+
+    .section h2 {
+        font-size: 23px;
+    }
+
+    .footer-container {
+        width: 85%;
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 35px;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-column h3::after {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-links a:hover {
+        padding-left: 0;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -27,100 +785,93 @@
 
 <header class="header">
 
-```
 <a href="index.html" class="logo">
 
-    <img src="icon.PNG" alt="Gospel Wonders Mission Logo">
+<img src="icon.PNG" alt="Gospel Wonders Mission Logo">
 
-    <span>GWMC</span>
+<span>GWMC</span>
 
 </a>
 
-
 <button class="menu-toggle" aria-label="Open Menu">
-    ☰
+☰
 </button>
-
 
 <nav class="navbar">
 
-    <a href="index.html">
-        Home
-    </a>
+<a href="index.html">
+Home
+</a>
 
-    <a href="about.HTML" class="active">
-        About
-    </a>
+<a href="about.HTML" class="active">
+About
+</a>
 
-    <a href="ministries.HTML">
-        Ministries
-    </a>
+<a href="ministries.HTML">
+Ministries
+</a>
 
-    <a href="sermons.HTML">
-        Sermons
-    </a>
+<a href="sermons.HTML">
+Sermons
+</a>
 
-    <a href="events.HTML">
-        Events
-    </a>
+<a href="events.HTML">
+Events
+</a>
 
-    <a href="gallery.HTML">
-        Gallery
-    </a>
+<a href="gallery.HTML">
+Gallery
+</a>
 
-    <a href="contact.HTML">
-        Contact
-    </a>
+<a href="contact.HTML">
+Contact
+</a>
 
-    <a href="#donate" class="donate-btn">
-        Donate
-    </a>
+<a href="#donate" class="donate-btn">
+Donate
+</a>
 
 </nav>
 
-
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-    🌙
+<button class="theme-toggle" id="themeToggle">
+🌙
 </button>
-```
 
 </header>
 
 <!-- =====================================
-        HERO / BANNER
+        HERO
 ===================================== -->
 
 <section class="banner">
 
-```
 <div class="hero">
 
-    <div>
+<div>
 
-        <h1>
-            About Our Church
-        </h1>
+<h1>
+About Our Church
+</h1>
 
-        <p>
-            Serving God by Serving People
-        </p>
+<p>
+Serving God by Serving People
+</p>
 
-    </div>
+</div>
 
 </div>
 
 <div class="banner-content">
 
-    <h1>
-        Gospel Wonders Mission Church Bulenga
-    </h1>
+<h1>
+Gospel Wonders Mission Church Bulenga
+</h1>
 
-    <p>
-        A Christ-centered church committed to transforming lives through the Gospel.
-    </p>
+<p>
+A Christ-centered church committed to transforming lives through the Gospel.
+</p>
 
 </div>
-```
 
 </section>
 
@@ -130,186 +881,149 @@
 
 <main class="container">
 
-```
-<!-- WHO WE ARE -->
-
 <section class="section">
 
-    <h2>
-        Who We Are
-    </h2>
+<h2>
+Who We Are
+</h2>
 
+<p>
+Gospel Wonders Mission Church Bulenga is a Christ-centered ministry dedicated to preaching the Gospel of Jesus Christ, transforming lives, and raising faithful disciples. Since its establishment in <strong>2014</strong>, the church has continued to grow spiritually while serving the community with love, faith, compassion, and the power of God's Word.
+</p>
 
-    <p>
-        Gospel Wonders Mission Church Bulenga is a Christ-centered ministry dedicated to preaching the Gospel of Jesus Christ, transforming lives, and raising faithful disciples. Since its establishment in <strong>2014</strong>, the church has continued to grow spiritually while serving the community with love, faith, compassion, and the power of God's Word.
-    </p>
+<br>
 
-
-    <br>
-
-
-    <p>
-        We believe that every person has a divine purpose, and through worship, prayer, teaching, and fellowship, we strive to help people discover God's plan for their lives. Our church welcomes everyone regardless of age, background, or nationality to experience the love and grace of Jesus Christ.
-    </p>
+<p>
+We believe that every person has a divine purpose, and through worship, prayer, teaching, and fellowship, we strive to help people discover God's plan for their lives. Our church welcomes everyone regardless of age, background, or nationality to experience the love and grace of Jesus Christ.
+</p>
 
 </section>
 
-
-
-<!-- HISTORY -->
-
 <section class="section">
 
-    <h2>
-        Our History
-    </h2>
+<h2>
+Our History
+</h2>
 
-
-    <p>
-        Gospel Wonders Mission Church Bulenga was founded in <strong>2014</strong> with a vision of spreading the Gospel, winning souls for Christ, and building a strong Christian community founded on biblical truth. What began as a small fellowship has grown into a vibrant church family where lives continue to be transformed through the power of God.
-    </p>
+<p>
+Gospel Wonders Mission Church Bulenga was founded in <strong>2014</strong> with a vision of spreading the Gospel, winning souls for Christ, and building a strong Christian community founded on biblical truth. What began as a small fellowship has grown into a vibrant church family where lives continue to be transformed through the power of God.
+</p>
 
 </section>
 
-
-
-<!-- PASTOR -->
-
 <section class="section">
 
-    <h2>
-        Our Pastor
-    </h2>
+<h2>
+Our Pastor
+</h2>
 
-
-    <p>
-        The church is led by <strong>Pastor Robert Katweere</strong>, a devoted servant of God whose passion is teaching the Word of God, shepherding believers, and reaching communities with the message of salvation. Under his leadership, Gospel Wonders Mission Church Bulenga continues to inspire hope, faith, and spiritual growth through prayer, worship, and practical Christian living.
-    </p>
+<p>
+The church is led by <strong>Pastor Robert Katweere</strong>, a devoted servant of God whose passion is teaching the Word of God, shepherding believers, and reaching communities with the message of salvation. Under his leadership, Gospel Wonders Mission Church Bulenga continues to inspire hope, faith, and spiritual growth through prayer, worship, and practical Christian living.
+</p>
 
 </section>
 
-
-
-<!-- VISION MISSION VALUES -->
-
 <section class="section">
 
-    <h2>
-        Our Vision, Mission & Core Values
-    </h2>
+<h2>
+Our Vision, Mission & Core Values
+</h2>
 
+<div class="cards">
 
-    <div class="cards">
+<div class="card">
 
+<div class="card-icon">
+✝
+</div>
 
-        <div class="card">
+<h3>
+Our Vision
+</h3>
 
-            <div class="card-icon">
-                ✝
-            </div>
+<p>
+To build a Christ-centered church that transforms lives and reaches nations through the Gospel of Jesus Christ.
+</p>
 
-            <h3>
-                Our Vision
-            </h3>
+</div>
 
-            <p>
-                To build a Christ-centered church that transforms lives and reaches nations through the Gospel of Jesus Christ.
-            </p>
+<div class="card">
 
-        </div>
+<div class="card-icon">
+📖
+</div>
 
+<h3>
+Our Mission
+</h3>
 
+<p>
+To preach the Gospel, make disciples, nurture believers, serve the community, and glorify God in everything we do.
+</p>
 
-        <div class="card">
+</div>
 
-            <div class="card-icon">
-                📖
-            </div>
+<div class="card">
 
-            <h3>
-                Our Mission
-            </h3>
+<div class="card-icon">
+❤️
+</div>
 
-            <p>
-                To preach the Gospel, make disciples, nurture believers, serve the community, and glorify God in everything we do.
-            </p>
+<h3>
+Core Values
+</h3>
 
-        </div>
+<p>
+Faith<br>
+Love<br>
+Prayer<br>
+Holiness<br>
+Integrity<br>
+Unity<br>
+Service
+</p>
 
+</div>
 
-
-        <div class="card">
-
-            <div class="card-icon">
-                ❤️
-            </div>
-
-            <h3>
-                Core Values
-            </h3>
-
-            <p>
-                Faith<br>
-                Love<br>
-                Prayer<br>
-                Holiness<br>
-                Integrity<br>
-                Unity<br>
-                Service
-            </p>
-
-        </div>
-
-
-    </div>
+</div>
 
 </section>
 
-
-
-<!-- BELIEFS -->
-
 <section class="section">
 
-    <h2>
-        Our Beliefs
-    </h2>
+<h2>
+Our Beliefs
+</h2>
 
-
-    <p>
-        We believe in one true God, the Holy Trinity—Father, Son, and Holy Spirit. We believe that Jesus Christ is the Son of God, who died and rose again for the salvation of mankind. We uphold the Holy Bible as the inspired Word of God and encourage every believer to live a life of holiness, prayer, worship, and service to God and humanity.
-    </p>
+<p>
+We believe in one true God, the Holy Trinity—Father, Son, and Holy Spirit. We believe that Jesus Christ is the Son of God, who died and rose again for the salvation of mankind. We uphold the Holy Bible as the inspired Word of God and encourage every believer to live a life of holiness, prayer, worship, and service to God and humanity.
+</p>
 
 </section>
-
-
-
-<!-- CALL TO ACTION -->
 
 <section class="about-cta" id="donate">
 
-    <h2>
-        Be Part of Our Church Family
-    </h2>
+<h2>
+Be Part of Our Church Family
+</h2>
 
-    <p>
-        Join us as we worship, pray, learn God's Word and serve our community together.
-    </p>
+<p>
+Join us as we worship, pray, learn God's Word and serve our community together.
+</p>
 
-    <div class="cta-buttons">
+<div class="cta-buttons">
 
-        <a href="join.HTML" class="cta-btn">
-            Join Us
-        </a>
+<a href="join.HTML" class="cta-btn">
+Join Us
+</a>
 
-        <a href="contact.HTML" class="cta-btn secondary">
-            Contact Us
-        </a>
+<a href="contact.HTML" class="cta-btn secondary">
+Contact Us
+</a>
 
-    </div>
+</div>
 
 </section>
-```
 
 </main>
 
@@ -319,232 +1033,256 @@
 
 <footer class="site-footer">
 
-```
 <div class="footer-container">
 
+<!-- CHURCH INFORMATION -->
 
-    <!-- CHURCH INFORMATION -->
+<div class="footer-column">
 
-    <div class="footer-column">
+<div class="footer-logo">
 
-        <div class="footer-logo">
+<img src="icon.PNG" alt="Gospel Wonders Mission Logo">
 
-            <img
-                src="icon.PNG"
-                alt="Gospel Wonders Mission Logo"
-            >
-
-            <span>
-                Gospel Wonders Mission
-            </span>
-
-        </div>
-
-
-        <p>
-            Gospel Wonders Mission Church Bulenga is a Christ-centered ministry committed to preaching the Gospel, transforming lives and serving the community.
-        </p>
-
-
-        <p class="footer-motto">
-
-            <strong>
-                Serving God by Serving People
-            </strong>
-
-        </p>
-
-    </div>
-
-
-
-    <!-- QUICK LINKS -->
-
-    <div class="footer-column">
-
-        <h3>
-            Quick Links
-        </h3>
-<link rel="stylesheet" href="style.css">
-
-
-        <ul class="footer-links">
-
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="about.HTML">
-                    About Us
-                </a>
-            </li>
-
-            <li>
-                <a href="ministries.HTML">
-                    Ministries
-                </a>
-            </li>
-
-            <li>
-                <a href="sermons.HTML">
-                    Sermons
-                </a>
-            </li>
-
-            <li>
-                <a href="events.HTML">
-                    Events
-                </a>
-            </li>
-
-            <li>
-                <a href="gallery.HTML">
-                    Gallery
-                </a>
-            </li>
-
-            <li>
-                <a href="contact.HTML">
-                    Contact Us
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-
-
-    <!-- CHURCH LINKS -->
-
-    <div class="footer-column">
-
-        <h3>
-            Church
-        </h3>
-
-
-        <ul class="footer-links">
-
-            <li>
-                <a href="prayer.HTML">
-                    Prayer Request
-                </a>
-            </li>
-
-            <li>
-                <a href="leadership.HTML">
-                    Leadership
-                </a>
-            </li>
-
-            <li>
-                <a href="join.HTML">
-                    Join Us
-                </a>
-            </li>
-
-            <li>
-                <a href="location.HTML">
-                    Our Location
-                </a>
-            </li>
-
-            <li>
-                <a href="#donate">
-                    Donate
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-
-
-    <!-- CONTACT -->
-
-    <div class="footer-column">
-
-        <h3>
-            Contact Us
-        </h3>
-
-
-        <p>
-            📍 Bulenga, Uganda
-        </p>
-
-
-        <p>
-            📞 +256 XXX XXX XXX
-        </p>
-
-
-        <p>
-            ✉️ info@gospelwondersmission.org
-        </p>
-
-
-        <h4>
-            Follow Us
-        </h4>
-
-
-        <div class="social-links">
-
-            <a href="#" aria-label="Facebook">
-                f
-            </a>
-
-            <a href="#" aria-label="YouTube">
-                ▶
-            </a>
-
-            <a href="#" aria-label="Instagram">
-                ◎
-            </a>
-
-            <a href="#" aria-label="WhatsApp">
-                ☏
-            </a>
-
-        </div>
-
-    </div>
-
+<span>
+Gospel Wonders Mission
+</span>
 
 </div>
 
+<p>
+Gospel Wonders Mission Church Bulenga is a Christ-centered ministry committed to preaching the Gospel, transforming lives and serving the community.
+</p>
 
+<p class="footer-motto">
+
+<strong>
+Serving God by Serving People
+</strong>
+
+</p>
+
+</div>
+
+<!-- QUICK LINKS -->
+
+<div class="footer-column">
+
+<h3>
+Quick Links
+</h3>
+
+<ul class="footer-links">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.HTML">
+About Us
+</a>
+</li>
+
+<li>
+<a href="ministries.HTML">
+Ministries
+</a>
+</li>
+
+<li>
+<a href="sermons.HTML">
+Sermons
+</a>
+</li>
+
+<li>
+<a href="events.HTML">
+Events
+</a>
+</li>
+
+<li>
+<a href="gallery.HTML">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="contact.HTML">
+Contact Us
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- CHURCH LINKS -->
+
+<div class="footer-column">
+
+<h3>
+Church
+</h3>
+
+<ul class="footer-links">
+
+<li>
+<a href="prayer.HTML">
+Prayer Request
+</a>
+</li>
+
+<li>
+<a href="leadership.HTML">
+Leadership
+</a>
+</li>
+
+<li>
+<a href="join.HTML">
+Join Us
+</a>
+</li>
+
+<li>
+<a href="location.HTML">
+Our Location
+</a>
+</li>
+
+<li>
+<a href="#donate">
+Donate
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="footer-column">
+
+<h3>
+Contact Us
+</h3>
+
+<p>
+📍 Bulenga, Uganda
+</p>
+
+<p>
+📞 +256 XXX XXX XXX
+</p>
+
+<p>
+✉️ info@gospelwondersmission.org
+</p>
+
+<h4>
+Follow Us
+</h4>
+
+<div class="social-links">
+
+<a href="#" aria-label="Facebook">
+f
+</a>
+
+<a href="#" aria-label="YouTube">
+▶
+</a>
+
+<a href="#" aria-label="Instagram">
+◎
+</a>
+
+<a href="#" aria-label="WhatsApp">
+☏
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 <!-- FOOTER BOTTOM -->
 
 <div class="footer-bottom">
 
-    <p>
-        © 2026 Gospel Wonders Mission Church Bulenga.
-        All Rights Reserved.
-    </p>
+<p>
+© 2026 Gospel Wonders Mission Church Bulenga.
+All Rights Reserved.
+</p>
 
-
-    <p>
-        Designed & Developed with ❤️
-    </p>
+<p>
+Designed & Developed with ❤️
+</p>
 
 </div>
-```
 
 </footer>
 
-<!-- =====================================
-        JAVASCRIPT
-===================================== -->
+<script>
 
-<script src="SCRIPT.JS"></script>
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const menuToggle = document.querySelector(".menu-toggle");
+
+const navbar = document.querySelector(".navbar");
+
+menuToggle.addEventListener("click", function() {
+
+    navbar.classList.toggle("show");
+
+});
+
+
+/* =========================================
+   CLOSE MOBILE MENU AFTER CLICK
+========================================= */
+
+document.querySelectorAll(".navbar a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        navbar.classList.remove("show");
+
+    });
+
+});
+
+
+/* =========================================
+   THEME BUTTON
+========================================= */
+
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", function() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        themeToggle.textContent = "☀️";
+
+    } else {
+
+        themeToggle.textContent = "🌙";
+
+    }
+
+});
+
+</script>
 
 </body>
 
